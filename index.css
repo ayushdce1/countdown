@@ -1,0 +1,86 @@
+:root {
+    --color1:#164B60;
+    --color2:#29a1dd;
+    --color3:#2e7e89;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 100%;
+}
+@font-face {
+    font-family: digital;
+    src: url("digital.otf");
+}
+@font-face {
+    font-family: Calculator;
+    src: url("Calculator.ttf");
+}
+body{
+    background: linear-gradient(75deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+    background-size: 400% 400%;
+    
+    animation: bodybackg 10s linear infinite;
+}
+@keyframes bodybackg{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+.countdown_wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    gap: 20px;
+}
+.countdown_inside{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.countdown_days_wrap, .countdown_hrs_wrap, .countdown_min_wrap, .countdown_sec_wrap{
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    border-radius: 5px;
+    width: 200px;
+    height: 150px;
+    animation: bgcolor 10s linear infinite;
+}
+.countdown_days_inside, .countdown_hrs_inside, .countdown_min_inside, .countdown_sec_inside{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+    
+}
+.countdown_days_inside > div, .countdown_hrs_inside > div, .countdown_min_wrap > div, .countdown_sec_inside > div{
+    font-size: 3rem;
+    color: #fff;
+    text-align: center;
+    font-family: digital;
+    letter-spacing: 0.5rem;
+}
+.countdown_days_inside > div span, .countdown_hrs_inside > div span, .countdown_min_wrap > div span, .countdown_sec_wrap  > div span{
+    font-family: Calculator;
+    display: block;
+    letter-spacing: 0.1rem;
+}
+
+@keyframes bgcolor{
+    0%{background-color: var(--color1);}
+    50%{background-color: var(--color2);}
+    100%{background-color: var(--color3);}
+    
+}
+.countdown_label h2{
+    font-family: Calculator;
+    font-size: 5rem;
+    color: #ccc;
+    text-shadow: 1px 1px 1px #000;
+}
